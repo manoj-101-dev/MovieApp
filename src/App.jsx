@@ -20,14 +20,18 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+
+            {/* Protect the HomePage */}
             <Route
               path="/HomePage"
               element={
                 <ProtectedRoute>
                   <HomePage />
                 </ProtectedRoute>
-              } // Protect the HomePage
+              }
             />
+
+            {/* Protect movie booking routes */}
             <Route
               path="/book/:movieId"
               element={
@@ -36,6 +40,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/bookings"
               element={
@@ -44,6 +49,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/movieList"
               element={
@@ -52,6 +58,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/edit-booking/:bookingId"
               element={
